@@ -1,4 +1,5 @@
 @extends('layouts.plantilla')
+@section('titulo','formulario')
 @section('contenido')
 
 {{-- Inicia Tarjeta con formulario --}}
