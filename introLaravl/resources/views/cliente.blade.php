@@ -11,8 +11,8 @@
             </div>
 
             <div class="card-body">
-                <h5 class="fw-bold"> mondragonlot@gmail.com </h5>
-                <h5 class="fw-medium"> 4421737519 </h5>
+                <h5 class="fw-bold"> andresmorales@gmail.com </h5>
+                <h5 class="fw-medium"> 5568163634 </h5>
                 <p class="card-text fw-lighter"> </p>
             </div>
 
