@@ -64,10 +64,10 @@
     <div class="container">
         <h1>Bienvenido al Repaso de Laravel</h1>
         <h3>Andrés Morales Cortez</h3>
-        <h4>S182 - Ingeniería de Sistemas</h4>
+        <h4>S193 - Ingeniería de Sistemas</h4>
         <p>Presiona el botón para comenzar</p>
 
-        <a href="/Repaso" class="btn-custom">Ir al Repaso</a>
+        <a href="/Repaso" class="btn-custom">Repaso 1</a>
     </div>
 </body>
 </html>
