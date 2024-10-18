@@ -3,54 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    @vite(['resources/js/app.js'])
-
     <title>Convertidor de Unidades</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: lightslategrey;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .card-header {
-            background-color: yellowgreen;
-            color: white;
-            border-radius: 10px 10px 0 0;
-            padding: 15px;
-        }
-
-        .form-label {
-            font-weight: bold;
-        }
-
-        .btn-success {
-            background-color: yellowgreen;
-            border: none;
-        }
-
-        .btn-success:hover {
-            background-color: #5dba4a;
-        }
-    </style>
+    <!-- Llamada al archivo CSS -->
+    @vite(['resources/css/styles.css'])
 </head>
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card shadow-lg">
                     <div class="card-header text-center">
                         <h3>Convertidor de Unidades de Almacenamiento</h3>
                     </div>
@@ -82,7 +44,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-success">Convertir</button>
+                                <button type="submit" class="btn-custom">Convertir</button>
                             </div>
                         </form>
 
