@@ -22,6 +22,14 @@ class controladorVistas extends Controller
     }
     public function procesarCliente(request $peticion)
     {
+        $validacion= $peticion->validate([
+            'txtnombre'  => 'required|min:4|max:20',
+            'txtapellidos' => 'required',
+            'txtcorreo'    => 'required',
+            'txttelefono'   => 'required|numeric',
+        ]);
+
+
        //respuesta de redireccion
        // usando la ruta
        // return redirect('/');
@@ -33,7 +41,7 @@ class controladorVistas extends Controller
       // redireccion de variable
 /*    $id= [['usuario'=>1],['usuario'=>2]];
     return view('formulario', compact('id')); */
-    // redireccion de variable por session 
+    // redireccion de variable por session
     $usuario= $peticion->input('txtnombre');
     session()->flash('exito','se guardo el usuario: '.$usuario);
     //return con to route
