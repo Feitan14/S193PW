@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\validadorCliente;
 class controladorVistas extends Controller
 {
     public function home()
@@ -20,7 +20,7 @@ class controladorVistas extends Controller
     {
         return view('cliente');
     }
-    public function procesarCliente(request $peticion)
+    public function procesarCliente(validadorCliente $peticion)
     {
         $validacion= $peticion->validate([
             'txtnombre'  => 'required|min:4|max:20',
