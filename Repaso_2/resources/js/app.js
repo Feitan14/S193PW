@@ -1,3 +1,1 @@
-import 'alertifyjs';
 import './bootstrap';
-
