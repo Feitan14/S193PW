@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Libro;
-use Alert;
 
 class LibroController extends Controller
 {
@@ -24,9 +23,10 @@ class LibroController extends Controller
             'email' => 'required|email',
         ]);
 
-        Libro::create($validatedData);
+        $libro = Libro::create($validatedData);
 
-        alertify()->success("Todo correcto: Libro \"{$request->titulo}\" guardado");
-        return redirect()->route('libros.create');
+        return redirect()->route('libros.create')
+            ->with('status', 'success')
+            ->with('libro_titulo', $libro->titulo);
     }
 }

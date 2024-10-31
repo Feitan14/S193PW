@@ -140,7 +140,7 @@ return [
         'file'    => 'El tamaño de :attribute debe ser :size kilobytes.',
         'numeric' => 'El tamaño de :attribute debe ser :size.',
         'string'  => 'El campo :attribute debe contener :size caracteres.',
-    ],
+    ],[
     'starts_with'          => 'El campo :attribute debe comenzar con uno de los siguientes valores: :values',
     'string'               => 'El campo :attribute debe ser una cadena de caracteres.',
     'timezone'             => 'El campo :attribute debe ser una zona horaria válida.',
@@ -150,4 +150,12 @@ return [
     'uppercase'            => 'El campo :attribute debe estar en mayúscula.',
     'url'                  => 'El campo :attribute debe ser una URL válida.',
     'uuid'                 => 'El campo :attribute debe ser un UUID válido.',
+    ],
+    [
+    'required' => 'El campo :attribute es obligatorio.',
+    'numeric' => 'El campo :attribute debe ser un número.',
+    'email' => 'El campo :attribute debe ser un correo electrónico válido.',
+    'digits' => 'El campo :attribute debe tener :digits dígitos.',
+    'between' => 'El campo :attribute debe estar entre :min y :max.',
+    ],
 ];
