@@ -15,9 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(clientesSeeder::class);
 
-
-
-
         // User::factory(10)->create();
 
     /*  User::factory()->create([
