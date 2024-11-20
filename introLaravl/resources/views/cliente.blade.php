@@ -20,7 +20,7 @@
             </div>
 
             <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-warning btn-sm"> {{__('Actualizar')}}</button>
+                <button type="submit" class="btn btn-warning btn-sm" action="{{route('edit')}}"> {{__('Actualizar')}}</button>
                 <button type="submit" class="btn btn-danger btn-sm">  {{__('Eliminar')}} </button>
             </div>
         </div>

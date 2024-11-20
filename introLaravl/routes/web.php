@@ -37,3 +37,11 @@ route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaf
 route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
 
 route::get('/cliente', [clienteController::class, 'index'])->name('rutaCliente');
+
+/* Apartir de aqui son los metodos de eliminar y editar*/
+
+route::get('/cliente/edit', [clienteController::class, 'edit'])->name('rutaEdit');
+
+route::get('/cliente/actualizar', [clienteController::class, 'update'])->name('rutaUpdate');
+
+route::get('/cliente/destroy', [clienteController::class, 'destroy'])->name('rutaDestroy');

@@ -58,7 +58,7 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view ('edit');
     }
 
     /**
@@ -66,7 +66,7 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return view('update');
     }
 
     /**
@@ -74,6 +74,6 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleted = DB::delete('delete from users');
     }
 }
