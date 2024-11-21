@@ -32,16 +32,16 @@ route::get('/', [controladorVistas::class, 'home'])->name('rutaInicio');
 
 
 /* rutas para ccontrolador clienteController */
+route::get('/cliente', [clienteController::class, 'index'])->name('rutaCliente');
 route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaform');
 
-route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
+route::post('/procesarCliente', [clienteController::class, 'store'])->name('rutaEnviar');
 
-route::get('/cliente', [clienteController::class, 'index'])->name('rutaCliente');
 
 /* Apartir de aqui son los metodos de eliminar y editar*/
 
-route::get('/cliente/edit', [clienteController::class, 'edit'])->name('rutaEdit');
+route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaEdit');
 
-route::get('/cliente/actualizar', [clienteController::class, 'update'])->name('rutaUpdate');
+route::put('/cliente/{id}', [clienteController::class, 'update'])->name('rutaUpdate');
 
-route::get('/cliente/destroy', [clienteController::class, 'destroy'])->name('rutaDestroy');
+route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('rutaEliminar');

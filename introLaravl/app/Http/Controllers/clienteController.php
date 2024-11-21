@@ -44,36 +44,53 @@ class clienteController extends Controller
         //return con to route
         return to_route('rutaform');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        return view ('edit');
+        $cliente = DB::table('clientes')->where('id',$id)->first();
+        if (!$cliente){
+            return redirect()->back()->withErrors(['error'=> 'Cliente no encontrado']);
+        }
+        return view ('edit', compact('cliente'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, $id)
     {
-        return view('update');
+        $updated = DB::table('clientes')
+        ->where('id', $id)
+        ->update( [
+            "nombre" => $request->input('txtnombre'),
+            "apellido" => $request->input('txtapellidos'),
+            "correo" => $request->input('txtcorreo'),
+            "telefono" => $request->input('txttelefono'),
+            "updated_at"=> Carbon::now(),
+        ]);
+
+        if($updated){
+            session()->flash('exito','se actualizo el cliente con ID: ' . $id);
+        } else {
+            session()->flash('error', 'Error al actualizar el cliente');
+        }
+        return to_route('rutaCliente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        $deleted = DB::delete('delete from users');
+        $deleted = DB::table ('clientes')->where('id',$id)->delete();
+        if($deleted){
+            session()->flash('exito', 'se  elimino el cliente con ID: ' . $id);
+            } else{
+                session()->flash('error', 'Error al eliminar el cliente');
+            }
+            return to_route('rutaCliente');
     }
 }

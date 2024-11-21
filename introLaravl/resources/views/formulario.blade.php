@@ -14,11 +14,14 @@
     @session('exito')
     <script>
         Swal.fire({
-            title: "Buen trabajo!",
-            text: "Echale más ganas!",
-            icon: "success"});
+            title: "Exito!",
+            text: "{{{session('exito')}}}",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+        });
         </script>
-    @endsession
+    @endif
+
         <div class="card font-monospace">
 
             <div class="card-header fs-5 text-center text-primary">
@@ -29,7 +32,6 @@
 
                 <form action="{{route('rutaEnviar')}}" method="POST">
                     @csrf
-                    
                     <div class="mb-3">
                         <label for="nombre" class="form-label">{{__('Nombre')}} </label>
                         <input type="text" class="form-control" name="txtnombre"value="{{old('txtnombre')}}">
