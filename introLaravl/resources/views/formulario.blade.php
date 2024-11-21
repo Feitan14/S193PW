@@ -14,7 +14,7 @@
     @session('exito')
     <script>
         Swal.fire({
-            title: "Exito!",
+            title: "exito!",
             text: "{{{session('exito')}}}",
             icon: "success",
             confirmButtonText: "Aceptar",
